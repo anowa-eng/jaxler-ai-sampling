@@ -23,13 +23,56 @@ code {
 }
 .form-data {
   color: #eee;
+  outline: none;
+  cursor: text;
 }
 #prompt:empty::before {
-    content: "Placeholder goes here...";
+    content: "Prompt goes here...";
 }
 #response:empty::before {
     content: "Response goes here...";
 }
 .form-data:empty::before {
     color: #383838;
+}
+input[type="submit"] {
+    width: 200px;
+    padding: 5px;
+    margin: 18pt 0;
+    border-radius: 2.5px;
+
+    background: none;
+    color: #5CD285;
+    border: 1px #5CD285 solid;
+    font-size: 14pt;
+    letter-spacing: 0.2em;
+
+    font-family: JetBrains Mono;
+
+    transition: all ease 200ms;
+}
+input[type="submit"]:hover {
+    background: #5CD285;
+    color: #222;
+}
+.center-wrapper {
+    text-align: center;
+}
+@keyframes toast-animation {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+#toast-wrapper {
+    position: absolute;
+    left: 50%;
+    animation: toast-animation 500ms cubic-bezier(.17,.67,.5,1.2);
+}
+#toast {
+    transform: translateX(-50%);
 }

@@ -10,15 +10,19 @@
   <body>
     <form action="/api/create-conversational-data" method="post">
       {% csrf_token %}
-      <code>
-        {<br>
-        &nbsp;&nbsp;"<span class="field">prompt</span>": "<span contenteditable="true" class="form-data placeholder" id="prompt"></span>",<br>
-        &nbsp;&nbsp;"<span class="field">response</span>": "<span contenteditable="true" class="form-data placeholder" id="response"></span>",<br>
-        }
-      </code>
-      <input type="hidden" id="prompt-value" name="prompt" required>
-      <input type="hidden" id="response-value" name="response" required>
-      <input type="submit">
+      <div>
+        <code>
+            {<br>
+            &nbsp;&nbsp;"<span class="field">prompt</span>": "<span contenteditable="true" class="form-data placeholder" id="prompt"></span>",<br>
+            &nbsp;&nbsp;"<span class="field">response</span>": "<span contenteditable="true" class="form-data placeholder" id="response"></span>",<br>
+            }
+        </code>
+      </div>
+      <!-- me who was too lazy to create a validator xddxdxdxxd -->
+      <!-- and besides i can get into the database and delete the ones that don't have a field manually -->
+      <input type="hidden" id="prompt-value" name="prompt">
+      <input type="hidden" id="response-value" name="response">
+      <div class="center-wrapper"><input type="submit"></div>
     </form>
     <script src="{% static 'script.js' %}"></script>
   </body>

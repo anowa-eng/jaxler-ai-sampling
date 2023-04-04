@@ -12,9 +12,9 @@ def create_conversational_data(req):
                 response=req.POST.get('response')
             )
             serializer_data = serializers.ConversationalDataSerializer(obj).data
-            return redirect('/', context={'passed': True})
+            return redirect('/')
         except Exception as e:
-            return redirect('/', context={'error': str(e)})
+            return redirect('/')
     else:
         return JsonResponse({})
 
