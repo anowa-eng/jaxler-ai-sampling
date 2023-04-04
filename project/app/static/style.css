@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;800&display=swap');
+
+body {
+  background: #222;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  margin: 0;
+}
+code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18pt;
+  line-height: 1.5em;
+  letter-spacing: -0.05em;
+  color: gray;
+}
+.field {
+  color: #c3eafa;
+  font-weight: bold;
+}
+.form-data {
+  color: #eee;
+}
+#prompt:empty::before {
+    content: "Placeholder goes here...";
+}
+#response:empty::before {
+    content: "Response goes here...";
+}
+.form-data:empty::before {
+    color: #383838;
+}

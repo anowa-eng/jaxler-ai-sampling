@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <body>
+    <form action="/api/create-conversational-data" method="post">
+      {% csrf_token %}
+      <code>
+        {<br>
+        &nbsp;&nbsp;"<span class="field">prompt</span>": "<span contenteditable="true" class="form-data placeholder" id="prompt"></span>",<br>
+        &nbsp;&nbsp;"<span class="field">response</span>": "<span contenteditable="true" class="form-data placeholder" id="response"></span>",<br>
+        }
+      </code>
+      <input type="hidden" id="prompt-value" name="prompt" required>
+      <input type="hidden" id="response-value" name="response" required>
+      <input type="submit">
+    </form>
+    <script src="{% static 'script.js' %}"></script>
+  </body>
+</html>
